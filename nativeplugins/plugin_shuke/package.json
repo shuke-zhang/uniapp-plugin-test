@@ -1,0 +1,25 @@
+
+
+{
+    "name": "plugin_shuke",
+    "id": "plugin_shuke",
+    "version": "1.0.0",
+    "description": "我自己的插件",
+    "_dp_type":"nativeplugin",
+    "_dp_nativeplugin":{
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "plugin_shuke",
+                    "class": "com.example.plugin_shuke.test"
+                }
+            ],
+			"integrateType": "aar",
+            "parameters": {
+                
+            },
+            "dependencies": []
+        }
+    }
+}
