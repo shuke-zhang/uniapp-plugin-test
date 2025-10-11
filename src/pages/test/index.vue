@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import { ref } from "vue"
+import { ref } from 'vue'
 
 // 输入的名字
-const name = ref("")
+const name = ref('')
 // 插件回调结果
-const reply = ref("")
+const reply = ref('')
 
 // 调用插件方法
 function callPlugin() {
   if (!name.value) {
-    reply.value = "请输入名字"
+    reply.value = '请输入名字'
     return
   }
 
-  // @ts-ignore 因为 uni 对象是全局的
-  uni.requireNativePlugin("plugin_shuke")
+  uni.requireNativePlugin('plugin_shuke')
     .sayHello(name.value, (res: any) => {
       // 插件返回数据
       reply.value = res.reply
@@ -31,11 +30,15 @@ function callPlugin() {
       type="text"
       placeholder="请输入名字"
       class="input"
-    />
+    >
 
-    <button @click="callPlugin" class="btn">调用插件</button>
+    <button class="btn" @click="callPlugin">
+      调用插件
+    </button>
 
-    <p  class="reply">插件返回：{{ reply || '-' }}</p>
+    <p class="reply">
+      插件返回：{{ reply || '-' }}
+    </p>
   </div>
 </template>
 
