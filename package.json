@@ -51,6 +51,7 @@
     "@dcloudio/uni-mp-weixin": "3.0.0-4030620241128001",
     "@dcloudio/uni-mp-xhs": "3.0.0-4030620241128001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-4030620241128001",
+    "@uni-helper/vite-plugin-uni-pages": "^0.3.19",
     "eslint": "^9.37.0",
     "eslint-plugin-format": "^1.0.2",
     "vue": "^3.4.21",

@@ -3,7 +3,12 @@ function handleAppLanguage() {
   uni.navigateTo({
     url: '/pages/test/index',
   })
-  console.log('跳转app原生语言插件-简单示例')
+}
+
+function handleRecorder() {
+  uni.navigateTo({
+    url: '/pages/recorder/plugin-test',
+  })
 }
 </script>
 
@@ -11,6 +16,10 @@ function handleAppLanguage() {
   <view class="container">
     <button class="native-button" @click="handleAppLanguage">
       跳转app原生语言插件-简单示例
+    </button>
+
+    <button class="native-button" @click="handleRecorder">
+      recorder-实时帧录音
     </button>
   </view>
 </template>
