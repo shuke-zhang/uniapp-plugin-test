@@ -4,7 +4,9 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
-    UniPages(),
+    UniPages({
+      homePage: 'pages/home/index',
+    }),
     uni(),
   ],
 })

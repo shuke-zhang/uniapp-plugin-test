@@ -1,0 +1,25 @@
+
+
+{
+    "name": "shuke_recorder",
+    "id": "shuke_recorder",
+    "version": "1.0.0",
+    "description": "录音插件",
+    "_dp_type":"nativeplugin",
+    "_dp_nativeplugin":{
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "shuke_recorder",
+                    "class": "com.example.shuke_recorder.RecorderModule"
+                }
+            ],
+			"integrateType": "aar",
+            "parameters": {
+                
+            },
+            "dependencies": []
+        }
+    }
+}
