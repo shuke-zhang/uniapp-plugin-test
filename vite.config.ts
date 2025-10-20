@@ -1,12 +1,25 @@
 import uni from '@dcloudio/vite-plugin-uni'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 
-export default defineConfig({
-  plugins: [
-    UniPages({
-      homePage: 'pages/home/index',
-    }),
-    uni(),
-  ],
+export default defineConfig(async ({ mode, command }) => {
+  const env = loadEnv(mode, './')
+  const _isBuild = command === 'build'
+
+  const config: UserConfig = {
+
+    plugins: [
+      UniPages({
+        homePage: 'pages/test/audio-play',
+      }),
+      uni(),
+    ],
+    define: {
+      __DEV__: mode === 'development',
+      __PROD__: mode === 'production',
+      API_URL: `"${env.VITE_APP_API_URL}"`,
+      APP_TITLE: `"${env.VITE_APP_TITLE}"`,
+    },
+  }
+  return config
 })

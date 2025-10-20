@@ -1,3 +1,7 @@
 export * from './debounce-throttle'
 export * from './EventEmitter'
+export * from './helpers'
+export * from './request'
+export * from './ui'
 export * from './webSocket'
+export * from './websocket-v2'
