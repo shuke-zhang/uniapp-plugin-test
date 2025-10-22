@@ -85,9 +85,9 @@ export class WebSocketV2 extends EventEmitter<{
       })
 
       this.socketInstance.onMessage((res) => {
-        const _data = JSON.parse(res.data)
-        this.emit('log', `✉️  ${JSON.stringify(_data) || 'no message'}`)
-        this.emit('message', JSON.stringify(_data))
+        const _data = res.data
+        this.emit('log', `✉️  ${_data || 'no message'}`)
+        this.emit('message', _data)
       })
 
       this.socketInstance.onClose((e) => {
@@ -128,14 +128,14 @@ export class WebSocketV2 extends EventEmitter<{
   /**
    * @description 发送消息
    */
-  sendMessage(value: any) {
+  sendMessage<T>(value: T): Promise<void> {
     const param = JSON.stringify(value)
     this.emit('log', `🛜 sendMessage 触发`)
     return new Promise((resolve, reject) => {
       this.socketInstance?.send({
         data: param,
         success() {
-          resolve(true)
+          resolve()
         },
         fail(error) {
           console.log('消息发送失败')

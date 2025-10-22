@@ -1,0 +1,25 @@
+
+
+{
+    "name": "shuke_audio_play",
+    "id": "shuke_audio_play",
+    "version": "1.0.0",
+    "description": "音频任务队列播放插件",
+    "_dp_type":"nativeplugin",
+    "_dp_nativeplugin":{
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "shuke_audio_play",
+                    "class": "com.example.shuke_audio_play.AudioModule"
+                }
+            ],
+			"integrateType": "aar",
+            "parameters": {
+                
+            },
+            "dependencies": []
+        }
+    }
+}

@@ -9,9 +9,10 @@ type _LocationUrl =
   "/pages/recorder/plugin-test" |
   "/pages/test/audio-play" |
   "/pages/test/audio-test" |
-  "/pages/test/doubao-test" |
   "/pages/test/index" |
-  "/pages/test/shuke-recorder";
+  "/pages/test/plugin-shuke" |
+  "/pages/test/shuke-recorder" |
+  "/pages/recorder/doubao/index";
 
 interface NavigateToOptions {
   url: _LocationUrl;

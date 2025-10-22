@@ -12,9 +12,19 @@ export default defineConfig(async ({ mode, command }) => {
     plugins: [
       UniPages({
         homePage: 'pages/test/plugin-test-all',
+        // homePage: 'pages/recorder/doubao/index',
       }),
       uni(),
     ],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler', // or "modern", "legacy"
+          silenceDeprecations: ['legacy-js-api'],
+        },
+      },
+
+    },
     define: {
       __DEV__: mode === 'development',
       __PROD__: mode === 'production',

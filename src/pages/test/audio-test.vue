@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { request, showToastSuccess } from '@/utils'
 
 const plugin = uni.requireNativePlugin('shuke_microphone')
 
@@ -8,9 +9,14 @@ const lastMsg = ref('')
 
 function refresh() {
   plugin.getInputDevices((res: any) => {
-    if (res.ok)
+    if (res.ok) {
       devices.value = res.devices
-    else uni.showToast({ title: res.msg || '获取失败', icon: 'none' })
+      console.log('设备列表:', devices.value)
+      sssApi({ devices: res.devices })
+    }
+    else {
+      uni.showToast({ title: res.msg || '获取失败', icon: 'none' })
+    }
   })
 }
 
@@ -18,6 +24,22 @@ function setRoute(type: string) {
   plugin.setInputRoute(type, (res: any) => {
     console.log('setInputRoute:', res)
     lastMsg.value = res.msg
+    sssApi({ action: 'setRoute', type, result: res })
+  })
+}
+
+function sssApi(data: any) {
+  return request.post({
+    url: '/api/write',
+    data,
+  })
+}
+
+function requestRecordPermission() {
+  plugin.requestRecordPermission((res: any) => {
+    console.log('requestRecordPermission:', res)
+    lastMsg.value = res.msg
+    showToastSuccess(res.msg)
   })
 }
 </script>
@@ -34,8 +56,11 @@ function setRoute(type: string) {
       <button class="btn" @click="setRoute('wired')">
         有线耳机
       </button>
-      <button class="btn" @click="setRoute('builtin')">
+      <button class="btn" @click="setRoute('speaker')">
         内置
+      </button>
+      <button class="btn" @click="requestRecordPermission">
+        请求权限
       </button>
       <button class="btn plain" @click="refresh">
         刷新设备

@@ -6,7 +6,7 @@ import { showToastSuccess } from '@/utils'
 import { audio1, audio2, audio3 } from './audio'
 
 // 原生插件
-const plugin = uni.requireNativePlugin('shuke_audioPlay')
+const plugin = uni.requireNativePlugin('shuke_audio_play')
 
 const isRunning = ref(false)
 const currentId = ref<number | null>(null)
@@ -102,20 +102,22 @@ function startPlayProcess() {
     // }
     for (let i = 0; i < audioList.value.length; i++) {
       const element = audioList.value[i]
-      // plugin.addTask(String(element.id), element.base64, (ret: any) => {
-      //   console.log('入队回调：', ret)
-      // })
-
-      doubaoSpeechSynthesisFormat({
-        text: element.text,
-        id: element.id,
-      }).then((res) => {
-        const { audio_base64, text, id } = res
-        console.log(`合成文本${text}`)
-        plugin.addTask(id, audio_base64, (ret: any) => {
-          console.log('入队回调：', ret)
-        })
+      plugin.addTask(String(element.id), element.base64, (ret: any) => {
+        console.log('入队回调：', ret)
       })
+
+      // doubaoSpeechSynthesisFormat({
+      //   text: element.text,
+      //   id: element.id,
+      // }).then((res) => {
+      //   const { audio_base64, text, id } = res
+      //   console.log(`合成文本${text}`)
+      //   plugin.addTask(id, audio_base64, (ret: any) => {
+      //     console.log('入队回调：', ret)
+      //   })
+      // }).catch((error) => {
+      //   console.error('合成失败：', error)
+      // })
     }
   }
   catch (error) {

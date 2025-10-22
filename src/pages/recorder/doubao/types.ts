@@ -8,19 +8,20 @@ export interface DoubaoRecorderOptions {
   APPID: string
 
   /**
-   * @description SecretKey 控制台获取
-   */
-  SecretKey: string
-
-  /**
    * @description AccessToken 控制台获取
    */
   AccessToken: string
 
   /**
-   * @description WebSocket 接口地址，默认使用科大讯飞提供的识别地址
+   * 音色
    */
-  url: string
+  voiceType: string
+
+  /**
+   * 返回的音频类型
+   *  - MP3
+   */
+  audioFormat: string
 
 }
 

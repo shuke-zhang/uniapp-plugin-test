@@ -63,7 +63,35 @@
             "plugin_shuke" : {
                 "__plugin_info__" : {
                     "name" : "plugin_shuke",
-                    "description" : "我自己的插件",
+                    "description" : "音频任务队列播放插件",
+                    "platforms" : "Android",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            },
+            "shuke_audio_play" : {
+                "__plugin_info__" : {
+                    "name" : "shuke_audio_play",
+                    "description" : "音频任务队列播放插件",
+                    "platforms" : "Android",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            },
+            "shuke_microphone" : {
+                "__plugin_info__" : {
+                    "name" : "shuke_microphone",
+                    "description" : "音频输入通道",
                     "platforms" : "Android",
                     "url" : "",
                     "android_package_name" : "",

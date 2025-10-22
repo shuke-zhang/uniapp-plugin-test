@@ -1,16 +1,16 @@
 {
-  "name": "plugin_shuke",
-  "id": "plugin_shuke",
-  "version": "1.1.2",
-  "description": "音频任务队列播放插件",
+  "name": "shuke_microphone",
+  "id": "shuke_microphone",
+  "version": "1.0.0",
+  "description": "音频输入通道",
   "_dp_type": "nativeplugin",
   "_dp_nativeplugin": {
     "android": {
       "plugins": [
         {
           "type": "module",
-          "name": "plugin_shuke",
-          "class": "com.example.plugin_shuke."
+          "name": "shuke_microphone",
+          "class": "com.example.shuke_microphone.AudioDeviceLister"
         }
       ],
       "integrateType": "aar",

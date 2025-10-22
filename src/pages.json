@@ -28,18 +28,19 @@
 			"type": "page"
 		},
 		{
-			"path": "pages/test/doubao-test",
-			"type": "page",
-			"style": {
-				"navigationBarTitleText": "豆包语音合成"
-			}
-		},
-		{
 			"path": "pages/test/index",
 			"type": "page"
 		},
 		{
+			"path": "pages/test/plugin-shuke",
+			"type": "page"
+		},
+		{
 			"path": "pages/test/shuke-recorder",
+			"type": "page"
+		},
+		{
+			"path": "pages/recorder/doubao/index",
 			"type": "page"
 		}
 	],

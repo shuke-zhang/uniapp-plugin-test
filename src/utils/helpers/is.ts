@@ -88,3 +88,9 @@ export function isLink(path?: string): boolean {
   const reg = /^https?:|http:|mailto:|tel:/
   return reg.test(path)
 }
+
+export function isBuffer(data: any) {
+  return data instanceof Uint8Array
+    || data instanceof ArrayBuffer
+    || ArrayBuffer.isView(data)
+}
