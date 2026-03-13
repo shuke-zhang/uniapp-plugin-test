@@ -11,7 +11,7 @@ export default defineConfig(async ({ mode, command }) => {
 
     plugins: [
       UniPages({
-        homePage: 'pages/test/plugin-test-all',
+        homePage: 'pages/home/index',
         // homePage: 'pages/recorder/doubao/index',
       }),
       uni(),

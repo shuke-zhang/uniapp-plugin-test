@@ -3,6 +3,12 @@ import { onReady, onUnload } from '@dcloudio/uni-app'
 import { ref } from 'vue'
 import { showToastSuccess } from '@/utils'
 
+definePage({
+  style: {
+    navigationBarTitleText: '所有内容 - 录音与播放',
+  },
+})
+
 const recorder = uni.requireNativePlugin('shuke_recorder')
 const mic = uni.requireNativePlugin('shuke_microphone')
 const player = uni.requireNativePlugin('shuke_audio_play')

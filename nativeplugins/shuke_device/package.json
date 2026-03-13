@@ -1,0 +1,25 @@
+
+
+{
+    "name": "shuke_device",
+    "id": "shuke_device",
+    "version": "1.0.0",
+    "description": "录音插件",
+    "_dp_type":"nativeplugin",
+    "_dp_nativeplugin":{
+        "android": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "shuke_device",
+                    "class": "com.example.shuke_device.DeviceIdModule"
+                }
+            ],
+			"integrateType": "aar",
+            "parameters": {
+                
+            },
+            "dependencies": []
+        }
+    }
+}

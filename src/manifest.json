@@ -88,6 +88,20 @@
                     "parameters" : {}
                 }
             },
+            "shuke_device" : {
+                "__plugin_info__" : {
+                    "name" : "shuke_device",
+                    "description" : "录音插件",
+                    "platforms" : "Android",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            },
             "shuke_microphone" : {
                 "__plugin_info__" : {
                     "name" : "shuke_microphone",

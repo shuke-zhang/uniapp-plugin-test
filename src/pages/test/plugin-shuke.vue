@@ -5,7 +5,7 @@ import { ref } from 'vue'
 const name = ref('')
 // 插件回调结果
 const reply = ref('')
-
+const shuke = uni.requireNativePlugin('plugin_shuke')
 // 调用插件方法
 function callPlugin() {
   if (!name.value) {
@@ -13,11 +13,10 @@ function callPlugin() {
     return
   }
 
-  uni.requireNativePlugin('plugin_shuke')
-    .sayHello(name.value, (res: any) => {
-      // 插件返回数据
-      reply.value = res.reply
-    })
+  shuke.sayHello(name.value, (res: any) => {
+    // 插件返回数据
+    reply.value = res.reply
+  })
 }
 </script>
 
